@@ -1,6 +1,6 @@
-# industry-4 ![cms-uoa-cicd](https://github.com/cooma04/cms-uoa/workflows/cms-uoa-cicd/badge.svg)
+# industry-4 ![cms-uoa-cicd]
 
-Machine health monitoring app for SOFTENG 761 project 5
+Machine health monitoring user interface used in FYP23, in collaboration with the Department of Electrical, Computer and Software Engineering
 
 ## Setting up
 
