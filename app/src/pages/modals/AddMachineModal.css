@@ -1,0 +1,7 @@
+.machine-add-ion-modal .modal-wrapper {
+    height: 65vh;
+    max-height: 100vh;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+}

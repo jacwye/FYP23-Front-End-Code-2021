@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cms-uoa</string>
+    <string name="title_activity_main">cms-uoa</string>
+    <string name="package_name">com.cmsUoa.app</string>
+    <string name="custom_url_scheme">com.cmsUoa.app</string>
+</resources>

@@ -1,0 +1,42 @@
+{
+    "__schema": {
+        "types": [
+            {
+                "kind": "INTERFACE",
+                "name": "MutationResponse",
+                "possibleTypes": [
+                    {
+                        "name": "MachineUpdatedResponse"
+                    },
+                    {
+                        "name": "SensorUpdatedResponse"
+                    },
+                    {
+                        "name": "MachineCreationResponse"
+                    },
+                    {
+                        "name": "SensorCreationResponse"
+                    },
+                    {
+                        "name": "UserCreationResponse"
+                    },
+                    {
+                        "name": "MachineSubscriptionResponse"
+                    },
+                    {
+                        "name": "EmailUpdateResponse"
+                    },
+                    {
+                        "name": "MachineAddedToUserResponse"
+                    },
+                    {
+                        "name": "MachineRemovedFromUserResponse"
+                    },
+                    {
+                        "name": "UserUpdatedResponse"
+                    }
+                ]
+            }
+        ]
+    }
+}

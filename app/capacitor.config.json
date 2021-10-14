@@ -1,0 +1,21 @@
+{
+    "appId": "com.cmsUoa.app",
+    "appName": "cms-uoa",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "plugins": {
+        "SplashScreen": {
+            "launchShowDuration": 0
+        },
+        "CapacitorFirebaseAuth": {
+            "providers": ["google.com"],
+            "languageCode": "en",
+            "nativeAuth": true,
+            "permissions": {
+                "google": ["profile", "email"]
+            }
+        }
+    },
+    "cordova": {}
+}

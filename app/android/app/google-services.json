@@ -1,0 +1,48 @@
+{
+    "project_info": {
+        "project_number": "314758269258",
+        "firebase_url": "https://cms-uoa.firebaseio.com",
+        "project_id": "cms-uoa",
+        "storage_bucket": "cms-uoa.appspot.com"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:314758269258:android:404af09d84d7b57bc599b3",
+                "android_client_info": {
+                    "package_name": "com.cmsUoa.app"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "314758269258-tiqb511t13p0pj12ibrgfaapk4vlmn10.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.cmsUoa.app",
+                        "certificate_hash": "04cef8a216ccd1d481c026b8b40fc1bc0881e2b6"
+                    }
+                },
+                {
+                    "client_id": "314758269258-bu15i0j8dotglem6835p3n006cuaqir5.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyDvY1zUMKbILT59Fy-TwgTpPlJKhocBZ1s"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "314758269258-bu15i0j8dotglem6835p3n006cuaqir5.apps.googleusercontent.com",
+                            "client_type": 3
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

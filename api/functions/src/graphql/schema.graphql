@@ -1,0 +1,182 @@
+enum Status {
+  Nominal
+  Moderate
+  Critical
+}
+
+enum NotificationStatus {
+  Working
+  Unacknowledged
+  Acknowledged
+}
+
+enum OperatingStatus {
+  Online
+  Offline
+}
+
+scalar Date
+
+type Machine {
+  id: ID!
+  name: String!
+  healthStatus: Status
+  notificationStatus: NotificationStatus
+  image: String!
+  subscribers: [String]
+  sensors: [Sensor!]!
+  operatingStatus: OperatingStatus
+}
+
+type Sensor {
+  id: ID!
+  machineId: ID!
+  name: String!
+  healthStatus: Status!
+  threshold: Float!
+  sensorData: [SensorData!]!
+  latestThresholdBreach: String
+}
+
+type SensorData {
+  timestamp: Date!
+  value: Float!
+}
+
+type User {
+  id: ID!
+  email: String!
+  machines: [String]
+  sensors: [String]
+  machinesSubscribed: [Machine]
+  emails: [String]
+  androidAppId: String
+}
+
+type Query {
+  user(id: ID!): User
+  user_email(email: String!): User
+  machines: [Machine!]!
+  machine(id: ID!): Machine
+  sensor(machineId: ID!, id: ID!): Sensor
+}
+
+interface MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type UserUpdatedResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type MachineUpdatedResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  machine: Machine
+}
+
+type SensorCreationResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  sensor: Sensor
+}
+
+type MachineCreationResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  machine: Machine
+}
+
+type SensorUpdatedResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  sensor: Sensor
+}
+
+type UserCreationResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type MachineSubscriptionResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type EmailUpdateResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type MachineAddedToUserResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type MachineRemovedFromUserResponse implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+input SensorInput {
+  machineID: ID!
+  name: String!
+  threshold: Float!
+}
+
+input MachineUpdateInput {
+  name: String
+  healthStatus: Status
+  notificationStatus: NotificationStatus
+  operatingStatus: OperatingStatus
+  subscribers: [String]
+  image: String
+}
+
+input SensorUpdateInput {
+  name: String
+  healthStatus: Status
+  threshold: Float
+  latestThresholdBreach: String
+}
+
+type Mutation {
+  updateMachine(id: ID!, input: MachineUpdateInput): MachineUpdatedResponse
+  updateSensor(
+    id: ID!
+    machineId: ID!
+    input: SensorUpdateInput
+  ): SensorUpdatedResponse
+  createMachine(name: String!, image: String!): MachineCreationResponse
+  createSensor(input: SensorInput): SensorCreationResponse
+  createUser(email: String!): UserCreationResponse
+  subscribeToMachine(userId: ID!, machineId: ID!): MachineSubscriptionResponse
+  unsubscribeFromMachine(
+    userId: ID!
+    machineId: ID!
+  ): MachineSubscriptionResponse
+  updateUserEmails(userId: ID!, emails: [String]): EmailUpdateResponse
+  addMachineToUser(userId: ID!, machineId: ID!): MachineAddedToUserResponse
+  removeMachineFromUser(
+    userId: ID!
+    machineId: ID!
+  ): MachineRemovedFromUserResponse
+}
